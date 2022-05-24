@@ -1,5 +1,5 @@
 {
-    "name": "yuwaka/helper",
+    "name": "adwconsulting/adw-helper",
     "description": "helper/library untuk project basis laravel",
     "type": "library",
     "license": "MIT",
@@ -10,7 +10,7 @@
     },
     "authors": [
         {
-            "name": "yuwaka",
+            "name": "adwconsulting",
             "email": "yuwaka33@gmail.com"
         }
     ],
