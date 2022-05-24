@@ -1,0 +1,20 @@
+{
+    "name": "yuwaka/helper",
+    "description": "helper/library untuk project basis laravel",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Adw\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yuwaka",
+            "email": "yuwaka33@gmail.com"
+        }
+    ],
+    "require": {
+        "laravelcollective/html": "^6.3"
+    }
+}
