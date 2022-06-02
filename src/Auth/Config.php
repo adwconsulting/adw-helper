@@ -5,8 +5,8 @@ class Config
 {
 
     protected static $config = [
-        'domainTenant' => 'http://tenant-service.test',
-        'domainToken' => 'http://user-service.test',
+        'baseUrlTenantService' => null,
+        'baseUrlUserService' => null,
         'expiredMinute' => 3000
     ];
 
