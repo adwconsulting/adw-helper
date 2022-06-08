@@ -1,13 +1,17 @@
 <?php
-namespace Adw\Auth;
+namespace Adw\User;
 
 class Config
 {
 
     protected static $config = [
-        'baseUrlTenantService' => null,
-        'baseUrlUserService' => null,
-        'expiredMinute' => 3000
+        'baseUrlPDC' => null,
+        'UrlPDCToken' => 'security/token',
+        'UrlPDCVendor' => 'BuyerProduct/findByBuyerOrVendor',
+        'buyerIdVendor' => null,
+        'domainVendor' => null,
+        'baseUrlUser' => null,
+        'urlUserRegister'=> 'api/v1/user/register'
     ];
 
     public static function setConfig($config){
