@@ -10,7 +10,6 @@ Config::setConfig([
 
 
 $user = new User;
-$user->unsetToken();
 if ($user->authenticated()) {
-    $user->unsetToken();
+    echo $user->getCookieToken();
 }

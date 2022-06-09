@@ -33,6 +33,10 @@ class User {
         return new Client($config);
     }
 
+    public function setToken(string $token) {
+        $this->userClient = $this->client($token);
+    }
+
     public function login(string $username, string $password, array $other = []) {        
         try { 
             $credetial = [
@@ -63,7 +67,7 @@ class User {
     }
 
     public function authenticated($redirect = null) {
-        $token = $this->getToken();
+        $token = $this->getCookieToken();
         if (!$token) {
             if ($redirect === false) {
                 return false;
@@ -81,17 +85,17 @@ class User {
         return true;
     }
 
-    public function getToken() {
+    public function getCookieToken() {
         return !empty($_COOKIE[$this->cookieName]) ? $_COOKIE[$this->cookieName] : null;
     }    
 
-    public function setToken($token) {
+    public function setCookieToken($token) {
         setcookie($this->cookieName, $token, null, '/');
         return true;
     }
 
-    public function unsetToken() {
-        $token = $this->getToken();
+    public function unsetCookieToken() {
+        $token = $this->getCookieToken();
         if ($token) {
             unset($_COOKIE[$this->cookieName]);
         }

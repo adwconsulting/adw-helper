@@ -8,4 +8,4 @@ Config::setConfig([
 ]);
 $user = new User;
 $data = $user->login('enos.oberbrunner', 'password');
-$user->setToken($data->token);
+$user->setCookieToken($data->token);
