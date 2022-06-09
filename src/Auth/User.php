@@ -29,6 +29,25 @@ class User {
         return new Client($config);
     }
 
+    public function login(string $username, string $password, array $other = []) {        
+        try { 
+            $credetial = [
+                'username' => $username,
+                'password' => $password
+            ];
+            if ($other) {
+                $credetial = array_merge($credetial, $other);
+            }
+            $response = $this->userClient->request('POST', 'auth/login', [
+                'form_params' => $credetial
+            ]);        
+            return $this->responseHandler($response);
+        } catch (ClientException $e) {
+            $data = $this->errorHandler($e);      
+            throw new InvalidTenantException($data->message);
+        }
+    }
+
     public function getTenant() {               
         try { 
             $response = $this->userClient->request('GET', 'user/tenant');        
