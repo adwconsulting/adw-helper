@@ -5,8 +5,10 @@ class Config
 {
 
     protected static $config = [
+        'defaultLoginPageUrl' => null,
         'baseUrlTenantService' => null,
         'baseUrlUserService' => null,
+        'cookieName' => 'ADW-TOKEN',
         'expiredMinute' => 3000
     ];
 

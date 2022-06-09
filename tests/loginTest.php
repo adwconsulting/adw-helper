@@ -8,4 +8,4 @@ Config::setConfig([
 ]);
 $user = new User;
 $data = $user->login('enos.oberbrunner', 'password');
-var_dump($data);
+$user->setToken($data->token);
