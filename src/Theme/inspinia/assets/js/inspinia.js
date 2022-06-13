@@ -117,8 +117,8 @@ $(document).ready(function () {
     $('.navbar-minimalize').on('click', function (event) {
         event.preventDefault();
         $("body").toggleClass("mini-navbar");
+        $(".navbar-header").toggleClass("margin-side");
         SmoothlyMenu();
-
     });
 
     // Tooltips demo

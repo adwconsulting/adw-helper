@@ -2,7 +2,7 @@
 namespace Adw\Theme;
 
 use Illuminate\Support\ServiceProvider;
-
+use Adw\Theme\Theme;
 class ThemeServiceProvider extends ServiceProvider {
     
     public function register()
@@ -13,7 +13,7 @@ class ThemeServiceProvider extends ServiceProvider {
     public function boot()
     {
         $this->publishes([
-            base_path('vendor/yuwaka/helper/src/Theme/inspinia/assets') => public_path('inspinia/assets'),
+            dirname(__FILE__).'/'.Theme::getTemplate().'/assets'=> public_path(Theme::getTemplate().'/assets'),
         ]);
     }
 }

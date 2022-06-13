@@ -1,3 +1,7 @@
+.toast{
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 0px 0px 30px rgba(0, 0, 0, .25);
+}
 .toast-title {
     font-weight: 700
 }
@@ -118,9 +122,9 @@ button.toast-close-button {
     -webkit-box-shadow: 0 0 12px #999;
     box-shadow: 0 0 12px #999;
     color: #fff;
-    opacity: .8;
-    -ms-filter: alpha(Opacity=80);
-    filter: alpha(opacity=80)
+    opacity: 1;
+    -ms-filter: alpha(Opacity=100);
+    filter: alpha(opacity=100)
 }
 
 #toast-container > :hover {
@@ -160,23 +164,22 @@ button.toast-close-button {
 }
 
 .toast {
-    background-color: #030303
+    background-color: #000
 }
 
 .toast-success {
-    background-color: #51a351
+    background-color: #67a537;
 }
-
 .toast-error {
-    background-color: #bd362f
+    background-color: #eb1c24
 }
 
 .toast-info {
-    background-color: #2f96b4
+    background-color: #24A3F2
 }
 
 .toast-warning {
-    background-color: #f89406
+    background-color: #ffaf00
 }
 
 .toast-progress {
