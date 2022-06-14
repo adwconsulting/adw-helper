@@ -20,10 +20,15 @@
     @yield('cssPage')
 </head>
 
-<body class="">
+@if(View::hasSection('sidebarRight'))
+    <body class="scrollspy">
+        <main>
+@else
+    <body>
+@endif
     <div id="wrapper">
         @include('layout.sidebar')
-        <div id="page-wrapper" class="gray-bg">
+        <div id="page-wrapper" class="white-bg">
             @include('layout.header')
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-sm-4">
@@ -50,7 +55,10 @@
             @include('layout.footer')
         </div>
     </div>
-
+    @yield('sidebarRight')
+    @if(View::hasSection('sidebarRight'))
+        </main>
+    @endif
     <!-- Mainly scripts -->
     <script src="{{ asset('inspinia/assets/js/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ asset('inspinia/assets/js/popper.min.js') }}"></script>
@@ -65,6 +73,10 @@
     <script src="{{ asset('inspinia/assets/js/plugins/dataTables/datatables.min.js') }}"></script>
     <script src="{{ asset('inspinia/assets/js/plugins/dataTables/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('inspinia/assets/js/plugins/clockpicker/clockpicker.js') }}"></script>
+    <script src="{{ asset('inspinia/assets/js/plugins/ladda/spin.min.js') }}"></script>
+    <script src="{{ asset('inspinia/assets/js/plugins/ladda/ladda.min.js') }}"></script>
+    <script src="{{ asset('inspinia/assets/js/plugins/ladda/ladda.jquery.min.js') }}"></script>
+    <script src="{{ asset('inspinia/assets/js/plugins/sweetalert/sweetalert.min.js') }}"></script>
 
     @yield('js')
     <!-- Custom and plugin javascript -->

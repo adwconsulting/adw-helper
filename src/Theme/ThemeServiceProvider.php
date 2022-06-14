@@ -13,7 +13,7 @@ class ThemeServiceProvider extends ServiceProvider {
     public function boot()
     {
         $this->publishes([
-            dirname(__FILE__).'/'.Theme::getTemplate().'/assets'=> public_path(Theme::getTemplate().'/assets'),
+            dirname(__FILE__).'/'.Theme::getTemplate().'/assets' => public_path(Theme::getTemplate().'/assets'),
         ]);
     }
 }

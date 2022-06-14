@@ -1,30 +1,52 @@
-<div class="row border-bottom">
-    <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+<div class="row">
+    <nav class="navbar navbar-fixed-top shadow-sm" role="navigation">
         <div class="navbar-header">
-            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-            <form role="search" class="navbar-form-custom" action="search_results.html">
-                <div class="form-group">
-                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
-                </div>
-            </form>
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i
+                    class="fa fa-bars"></i> </a>
+            <a class="minimalize-styl-2 m-l-xs text-primary d-none d-sm-block" href="#">07 December 2021 -
+                20:02:46 WIB</a>
         </div>
         <ul class="nav navbar-top-links navbar-right">
-            <li>
-                <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
-            </li>
-            <li class="dropdown">
+            <li class="dropdown m-r-xs">
                 <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                    <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="label label-default pull-right">0</span>
+                </a>
+                <ul class="dropdown-menu dropdown-alerts" style="overflow-y: auto">
+                    <li>
+                        <a href="../5g/ecatalog-carts.html">
+                            <div>
+                                <i class="fa fa-briefcase"></i> Public
+                                <span class="label label-default pull-right count-public">0</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="./ecatalog-cart.html">
+                            <div>
+                                <i class="fa fa-gift"></i> Private
+                                <span class="label label-default pull-right count-private">0</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                </ul>
+            </li>
+            <li class="dropdown m-r-xs">
+                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                    <i class="fa fa-envelope"></i> <span class="label label-danger">16</span>
                 </a>
                 <ul class="dropdown-menu dropdown-messages">
                     <li>
                         <div class="dropdown-messages-box">
                             <a class="dropdown-item float-left" href="profile.html">
-                                <img alt="image" class="rounded-circle" src="img/a7.jpg">
+                                <img alt="image" class="rounded-circle" src="{{ asset('inspinia/assets/img/a7.jpg') }}">
                             </a>
-                            <div class="media-body">
+                            <div>
                                 <small class="float-right">46h ago</small>
-                                <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                                <strong>Mike Loreipsum</strong> started following <strong>Monica
+                                    Smith</strong>. <br>
                                 <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
                             </div>
                         </div>
@@ -33,11 +55,12 @@
                     <li>
                         <div class="dropdown-messages-box">
                             <a class="dropdown-item float-left" href="profile.html">
-                                <img alt="image" class="rounded-circle" src="img/a4.jpg">
+                                <img alt="image" class="rounded-circle" src="{{ asset('inspinia/assets/img/a4.jpg') }}">
                             </a>
-                            <div class="media-body ">
+                            <div>
                                 <small class="float-right text-navy">5h ago</small>
-                                <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                                <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica
+                                    Smith</strong>. <br>
                                 <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
                             </div>
                         </div>
@@ -46,9 +69,9 @@
                     <li>
                         <div class="dropdown-messages-box">
                             <a class="dropdown-item float-left" href="profile.html">
-                                <img alt="image" class="rounded-circle" src="img/profile.jpg">
+                                <img alt="image" class="rounded-circle" src="{{ asset('inspinia/assets/img/profile.jpg') }}">
                             </a>
-                            <div class="media-body ">
+                            <div>
                                 <small class="float-right">23h ago</small>
                                 <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
                                 <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
@@ -65,9 +88,9 @@
                     </li>
                 </ul>
             </li>
-            <li class="dropdown">
+            <li class="dropdown m-r-xs">
                 <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                    <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    <i class="fa fa-bell"></i> <span class="label label-danger">8</span>
                 </a>
                 <ul class="dropdown-menu dropdown-alerts">
                     <li>
@@ -99,7 +122,7 @@
                     <li class="dropdown-divider"></li>
                     <li>
                         <div class="text-center link-block">
-                            <a href="notifications.html" class="dropdown-item">
+                            <a href="5g-notifications.html" class="dropdown-item">
                                 <strong>See All Alerts</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -107,14 +130,32 @@
                     </li>
                 </ul>
             </li>
-
-
             <li>
-                <a href="login.html">
-                    <i class="fa fa-sign-out"></i> Log out
-                </a>
+                <div class="dropdown profile-element">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <img alt="image" class="rounded-circle wh-36" src="{{ asset('inspinia/assets/img/profile_small.jpg') }}" /><b
+                            class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu m-t-xs">
+                        <li>
+                            <a class="dropdown-item" href="profile.php">
+                                <i class="fa fa-user"></i> Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="contacts.html">
+                                <i class="fa fa-lock"></i> Ubah Password
+                            </a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" href="login.html">
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
         </ul>
-
     </nav>
 </div>

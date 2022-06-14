@@ -1,8 +1,8 @@
 <div class="footer">
     <div class="float-right">
-        10GB of <strong>250GB</strong> Free.
+        All Rights Reserved
     </div>
     <div>
-        <strong>Copyright</strong> Example Company &copy; 2014-2018
+        Copyright &copy; <span class="text-primary font-bold"> PT. Anggada Duta Wisesa</span>
     </div>
 </div>
