@@ -72,6 +72,16 @@ class User {
         }
     }
     
+    public function info() {
+        try { 
+            $response = $this->userClient->request('GET', 'me');        
+            return $this->responseHandler($response);
+        } catch (ClientException $e) {
+            $data = $this->errorHandler($e);                 
+            throw new InvalidTenantException($data->message);
+        }
+    }
+    
     public function getTenant() {               
         try { 
             $response = $this->userClient->request('GET', 'user/tenant');        
