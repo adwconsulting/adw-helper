@@ -56,6 +56,20 @@ class User {
             throw new InvalidLoginException($data->message);
         }
     }
+
+    public function verifyToken() {
+        try { 
+            $response = $this->userClient->request('GET', 'auth/token');        
+            if ($response->getStatusCode() == Response::HTTP_OK) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (ClientException $e) {
+            $data = $this->errorHandler($e);                 
+            throw new InvalidTokenException($data->message);
+        }
+    }
     
     public function getTenant() {               
         try { 
