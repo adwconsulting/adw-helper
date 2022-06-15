@@ -13,6 +13,8 @@
     <link href="{{ asset('inspinia/assets/css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
     <link href="{{ asset('inspinia/assets/css/plugins/dataTables/datatables.min.css') }}" rel="stylesheet">
     <link href="{{ asset('inspinia/assets/css/plugins/clockpicker/clockpicker.css') }}" rel="stylesheet">
+    <link href="{{ asset('inspinia/assets/css/plugins/sweetalert/sweetalert.css') }}" rel="stylesheet">
+    <link href="{{ asset('inspinia/assets/css/plugins/ladda/ladda-themeless.min.css') }}" rel="stylesheet">
     <link href="{{ asset('inspinia/assets/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css') }}" rel="stylesheet">
     @yield('css')
     <link href="{{ asset('inspinia/assets/css/animate.css') }}" rel="stylesheet">
