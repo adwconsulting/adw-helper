@@ -1,13 +1,13 @@
 <?php
 
-namespace Adw\User;
+namespace Adw\PDC;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Adw\Exceptions\ConfigMissingException;
 use Adw\Exceptions\InvalidTenantException;
-use Adw\User\Config;
-use Adw\User\VendorToken;
+use Adw\PDC\Config;
+use Adw\PDC\VendorToken;
 
 class Vendor {
 

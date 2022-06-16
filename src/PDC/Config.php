@@ -1,12 +1,15 @@
 <?php
-namespace Adw\User;
+namespace Adw\PDC;
 
 class Config
 {
 
     protected static $config = [
-        'baseUrlUser' => null,
-        'urlUserRegister'=> 'api/v1/user/register'
+        'baseUrlPDC' => null,
+        'UrlPDCToken' => 'security/token',
+        'UrlPDCVendor' => 'BuyerProduct/findByBuyerOrVendor',
+        'buyerIdVendor' => null,
+        'domainVendor' => null
     ];
 
     public static function setConfig($config){

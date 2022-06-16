@@ -1,12 +1,12 @@
 <?php
 
-namespace Adw\User;
+namespace Adw\PDC;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Adw\Exceptions\ConfigMissingException;
 use Adw\Exceptions\InvalidTokenException;
-use Adw\User\Config;
+use Adw\PDC\Config;
 
 class VendorToken {
 
