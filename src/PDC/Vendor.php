@@ -28,23 +28,20 @@ class Vendor {
         return new Client(['base_uri' => $this->baseUrlPDC]);
     }
 
-    public function getVendor(Int $buyerId = null, String $domain) {
-        if(!$buyerId){
-            $buyerId = Config::getConfig('buyerIdVendor');
+    public function getVendor(String $token, String $param, Int $vendorId = null) {
+        if(!$token){
+            $token = Config::getConfig('tokenPDC');
         }
-        if(!$domain){
-            $domain = Config::getConfig('domainVendor');
-        }
-        $vendorToken = $this->vendorToken->getToken($buyerId,$domain);
+
+        $vendorToken = $this->vendorToken->getToken($token);
         try {
-            $response = $this->tenantClient->request('POST', Config::getConfig('UrlPDCVendor').'?buyerId='.$buyerId,[
+            $response = $this->tenantClient->request('GET', Config::getConfig('UrlPDCVendor').$param,[
+                'verify' => false,
                 'headers' => [
-                    'Content-Type' => 'application/json',
-                    'Accept'     => 'application/json'
+                    'Authorization' => 'Bearer '.$vendorToken->accessToken
                 ],
-                'json' => [
-                    'accessToken'=> $vendorToken->resultData->accessToken,
-                    'accessKey' => $vendorToken->resultData->accessKey
+                'query' => [
+                    'vendorId'=> $vendorId
                 ]
             ]);
             return $this->responseHandler($response);

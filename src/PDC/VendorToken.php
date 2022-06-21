@@ -26,13 +26,9 @@ class VendorToken {
         return new Client(['base_uri' => $this->baseUrlPDC]);
     }
 
-    public function getToken(Int $buyerId = null, String $domain = null) {
-        if(!$buyerId){
-            $buyerId = Config::getConfig('buyerIdVendor');
-        }
-
-        if(!$domain){
-            $domain = Config::getConfig('domainVendor');
+    public function getToken(String $token = null) {
+        if(!$token){
+            $token = Config::getConfig('tokenPDC');
         }
 
         try {
@@ -41,10 +37,9 @@ class VendorToken {
                     'Content-Type' => 'application/json',
                     'Accept'     => 'application/json'
                 ],
+                'verify' => false,
                 'json' => [
-                    'buyerId'=> $buyerId,
-                    'domain' => $domain,
-                    'type' => 0
+                    'token'=> $token
                 ]
             ]);
             return $this->responseHandler($response);

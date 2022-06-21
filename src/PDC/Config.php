@@ -6,10 +6,11 @@ class Config
 
     protected static $config = [
         'baseUrlPDC' => null,
-        'UrlPDCToken' => 'security/token',
-        'UrlPDCVendor' => 'BuyerProduct/findByBuyerOrVendor',
+        'UrlPDCToken' => 'security/login',
+        'UrlPDCVendor' => 'vendor/',
         'buyerIdVendor' => null,
-        'domainVendor' => null
+        'domainVendor' => null,
+        'tokenPDC'=> null
     ];
 
     public static function setConfig($config){
