@@ -7,6 +7,7 @@ class Config
     protected static $config = [
         'baseUrlPDC' => null,
         'UrlPDCToken' => 'security/login',
+        'UrlPDComGroup' => 'com-group/list',
         'UrlPDCVendor' => 'vendor/',
         'buyerIdVendor' => null,
         'domainVendor' => null,
