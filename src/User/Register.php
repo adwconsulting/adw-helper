@@ -31,7 +31,7 @@ class Register {
 
     public function setUser(array $data, $type = 'form_params') {
         try {
-            $response = $this->userClient->request('POST', Config::getConfig('urlUserRegister'),[
+            $response = $this->userClient->request('POST', 'user/register',[
                 $type => $data
             ]);
             return $this->responseHandler($response);

@@ -5,8 +5,7 @@ class Config
 {
 
     protected static $config = [
-        'baseUrlUser' => null,
-        'urlUserRegister'=> 'api/v1/user/register'
+        'baseUrlUser' => null
     ];
 
     public static function setConfig($config){
