@@ -7,6 +7,7 @@ use GuzzleHttp\Exception\ClientException;
 use Adw\Auth\Exceptions\ConfigMissingException;
 use Adw\Auth\Exceptions\InvalidTenantException;
 use Adw\Auth\Exceptions\InvalidLoginException;
+use Adw\Auth\Exceptions\InvalidTokenException;
 use Adw\Http\Response;
 
 class User {    
