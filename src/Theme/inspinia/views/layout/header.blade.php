@@ -137,7 +137,7 @@
             <li>
                 <div class="dropdown profile-element">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="image" class="rounded-circle wh-36" src="{{ auth()->user()->photo() }}" /><b
+                        <img alt="image" class="rounded-circle wh-36" src="{{ 'https://eu.ui-avatars.com/api?name='.auth()->user()->uem_firstname.' '.auth()->user()->uem_lastname }}" /><b
                             class="caret"></b>
                     </a>
                     <ul class="dropdown-menu m-t-xs">   
