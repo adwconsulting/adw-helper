@@ -1,3 +1,7 @@
+<?php
+    use Adw\Theme\Config;
+    $header = Config::getConfig('header');
+?>
 <div class="row">
     <nav class="navbar navbar-fixed-top shadow-sm" role="navigation">
         <div class="navbar-header">
@@ -133,26 +137,34 @@
             <li>
                 <div class="dropdown profile-element">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="image" class="rounded-circle wh-36" src="{{ asset('inspinia/assets/img/profile_small.jpg') }}" /><b
+                        <img alt="image" class="rounded-circle wh-36" src="{{ auth()->user()->photo() }}" /><b
                             class="caret"></b>
                     </a>
-                    <ul class="dropdown-menu m-t-xs">
+                    <ul class="dropdown-menu m-t-xs">   
+                        @if($header['profileUrl'])
                         <li>
-                            <a class="dropdown-item" href="profile.php">
+                            <a class="dropdown-item" href="{{ $header['profileUrl'] }}">
                                 <i class="fa fa-user"></i> Profile
                             </a>
                         </li>
+                        @endif
+                        @if($header['changePasswordUrl'])
                         <li>
-                            <a class="dropdown-item" href="contacts.html">
+                            <a class="dropdown-item" href="{{ $header['changePasswordUrl'] }}">
                                 <i class="fa fa-lock"></i> Ubah Password
                             </a>
                         </li>
+                        @endif                      
+                        @if($header['logoutUrl'] && ($header['profileUrl'] || $header['changePasswordUrl']))  
                         <li class="dropdown-divider"></li>
+                        @endif
+                        @if($header['logoutUrl'])
                         <li>
-                            <a class="dropdown-item" href="login.html">
+                            <a class="dropdown-item" href="{{ $header['logoutUrl'] }}">
                                 <i class="fa fa-sign-out"></i> Log out
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </div>
             </li>

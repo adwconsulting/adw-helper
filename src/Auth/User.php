@@ -12,6 +12,9 @@ use Adw\Http\Response;
 
 class User {    
 
+    const TYPE_INTERNAL = 'internal';
+    const TYPE_EXTERNAL = 'external';
+
     protected $userBaseUrl;
     protected $userClient;
     protected $defaultLoginPageUrl;
@@ -56,6 +59,16 @@ class User {
         } catch (ClientException $e) {
             $data = $this->errorHandler($e);      
             throw new InvalidLoginException($data->message);
+        }
+    }
+
+    public function logout() {
+        try { 
+            $response = $this->userClient->request('GET', 'logout');        
+            return $this->responseHandler($response);
+        } catch (ClientException $e) {
+            $data = $this->errorHandler($e);                 
+            throw new InvalidTenantException($data->message);
         }
     }
 
@@ -120,15 +133,7 @@ class User {
         setcookie($this->cookieName, $token, null, '/');
         return true;
     }
-
-    public function unsetCookieToken() {
-        $token = $this->getCookieToken();
-        if ($token) {
-            unset($_COOKIE[$this->cookieName]);
-        }
-        return true;
-    }
-
+    
     protected function responseHandler($response) {
         $data = $response->getBody()->getContents();        
         $result = json_decode($data);
