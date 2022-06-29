@@ -13,20 +13,21 @@ class Register {
     protected $baseUrlUser;
     protected $userClient;
 
-    public function __construct()
+    public function __construct(string $token = null)
     {
-        $this->userClient = $this->client();
+        $this->userClient = $this->client($token);
     }
 
-    protected function client() {
-        Config::setConfig([
-            'baseUrlUser' => env('BASE_URL_USER')
-        ]);
+    protected function client(string $token = null) {
         $this->baseUrlUser = Config::getConfig('baseUrlUser');
         if (!$this->baseUrlUser) {
             throw new ConfigMissingException('Missing config API user');
         }
-        return new Client(['base_uri' => $this->baseUrlUser]);
+        $config = ['base_uri' => $this->baseUrlUser];
+        if ($token) {
+            $config['headers'] = ['Authorization' => 'Bearer '.$token];
+        }
+        return new Client($config);
     }
 
     public function setUser(array $data, $type = 'form_params') {
