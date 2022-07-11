@@ -1,6 +1,6 @@
 <?php
 
-namespace Adw\Auth\Exceptions;
+namespace Adw\Exceptions;
 
 class InvalidLoginException extends \Exception {
 
