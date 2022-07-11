@@ -5,7 +5,7 @@ use Adw\Auth\User;
 
 Config::setConfig([
     'baseUrlUserService' => 'http://localhost/adw-5g/user-service/public/api/v1/',
-    'defaultLoginPageUrl' => 'http://adw-5g.test/login-internal/public/'
+    'defaultLoginPageUrl' => 'http://localhost/adw-5g/login-internal/public/'
 ]);
 
 try {

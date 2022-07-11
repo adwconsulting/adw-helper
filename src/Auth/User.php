@@ -4,11 +4,11 @@ namespace Adw\Auth;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use Adw\Auth\Exceptions\ConfigMissingException;
-use Adw\Auth\Exceptions\InvalidTenantException;
-use Adw\Auth\Exceptions\InvalidLoginException;
-use Adw\Auth\Exceptions\InvalidTokenException;
-use Adw\Auth\Exceptions\PasswordException;
+use Adw\Exceptions\ConfigMissingException;
+use Adw\Exceptions\InvalidTenantException;
+use Adw\Exceptions\InvalidLoginException;
+use Adw\Exceptions\InvalidTokenException;
+use Adw\Exceptions\PasswordException;
 use Adw\Http\Response;
 
 class User {    
