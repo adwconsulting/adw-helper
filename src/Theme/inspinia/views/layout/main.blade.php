@@ -89,6 +89,7 @@
     </script>
     <script src="{{ asset('inspinia/assets/js/jquery.number.min.js') }}"></script>
     <script src="{{ asset('inspinia/assets/js/lang/id.js') }}"></script>
+    <script src="https://cdn.tiny.cloud/1/juho0q3krcfm1xpwgjekwl4eazb2yf6i16wh82ba3rc3qkvd/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="{{ asset('inspinia/assets/js/app.js') }}"></script>
     @yield('jsPage')
 </body>
