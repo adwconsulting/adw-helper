@@ -16,6 +16,7 @@
     ],
     "require": {
         "laravelcollective/html": "^6.3",
-        "guzzlehttp/guzzle": "^7.0.1"
+        "guzzlehttp/guzzle": "^7.0.1",    
+        "owen-it/laravel-auditing": "^13.0"
     }
 }

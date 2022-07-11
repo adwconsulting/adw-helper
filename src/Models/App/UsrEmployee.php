@@ -8,7 +8,7 @@ use OwenIt\Auditing\Contracts\Auditable;
 class UsrEmployee extends Authenticatable implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
-    use \App\Traits\TraitUuid;
+    use \Adw\Traits\TraitUuid;
 
     protected $table = 'usr_employee';
 
