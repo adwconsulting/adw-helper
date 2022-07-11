@@ -10,7 +10,6 @@ use Adw\Auth\Exceptions\InvalidLoginException;
 use Adw\Auth\Exceptions\InvalidTokenException;
 use Adw\Auth\Exceptions\PasswordException;
 use Adw\Http\Response;
-use Illuminate\Support\Facades\Password;
 
 class User {    
 
@@ -73,7 +72,11 @@ class User {
                     'confirm_password' => $confirmPassword
                 ]
             ]);        
-            return $this->responseHandler($response);
+            if ($response->getStatusCode() == Response::HTTP_OK) {
+                return true;
+            } else {
+                return false;
+            }
         } catch (ClientException $e) {
             $data = $this->errorHandler($e);             
             throw new PasswordException($data->message);
@@ -83,7 +86,11 @@ class User {
     public function logout() {
         try { 
             $response = $this->userClient->request('GET', 'logout');        
-            return $this->responseHandler($response);
+            if ($response->getStatusCode() == Response::HTTP_OK) {
+                return true;
+            } else {
+                return false;
+            }
         } catch (ClientException $e) {
             $data = $this->errorHandler($e);                 
             throw new InvalidTenantException($data->message);
@@ -154,7 +161,7 @@ class User {
     
     protected function responseHandler($response) {
         $data = $response->getBody()->getContents();        
-        $result = json_decode($data);
+        $result = json_decode($data);        
         return $result->data;
     }
 
