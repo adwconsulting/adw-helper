@@ -8,7 +8,9 @@ use Adw\Auth\Exceptions\ConfigMissingException;
 use Adw\Auth\Exceptions\InvalidTenantException;
 use Adw\Auth\Exceptions\InvalidLoginException;
 use Adw\Auth\Exceptions\InvalidTokenException;
+use Adw\Auth\Exceptions\PasswordException;
 use Adw\Http\Response;
+use Illuminate\Support\Facades\Password;
 
 class User {    
 
@@ -45,20 +47,36 @@ class User {
 
     public function login(string $username, string $password, array $other = []) {        
         try { 
-            $credetial = [
+            $credential = [
                 'username' => $username,
                 'password' => $password
             ];
             if ($other) {
-                $credetial = array_merge($credetial, $other);
+                $credential = array_merge($credential, $other);
             }
             $response = $this->userClient->request('POST', 'auth/login', [
-                'form_params' => $credetial
+                'form_params' => $credential
             ]);        
             return $this->responseHandler($response);
         } catch (ClientException $e) {
             $data = $this->errorHandler($e);      
             throw new InvalidLoginException($data->message);
+        }
+    }
+
+    public function changePassword(string $oldPassword, string $newPassword, string $confirmPassword) {
+        try { 
+            $response = $this->userClient->request('PUT', 'password', [
+                'form_params' => [
+                    'old_password' => $oldPassword,
+                    'new_password' => $newPassword,
+                    'confirm_password' => $confirmPassword
+                ]
+            ]);        
+            return $this->responseHandler($response);
+        } catch (ClientException $e) {
+            $data = $this->errorHandler($e);             
+            throw new PasswordException($data->message);
         }
     }
 
