@@ -1,7 +1,7 @@
 <li class="nav-header m-t-xxl">
     <div class="dropdown profile-element">
         <div class="img-style text-center">
-            <img alt="image" class="rounded-circle" src="{{ asset('inspinia/assets/img/logo-96-white.png') }}">
+            <img alt="image" class="rounded-circle img-fluid" src="{{ Adw\Theme\Theme::profile()->mpr_logo }}">
         </div>
         <div class="row qr-code">
             <div class="col-md-6 text-center">
