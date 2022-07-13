@@ -61,6 +61,31 @@
     @if(View::hasSection('sidebarRight'))
         </main>
     @endif
+    <div class="toast toast-bootstrap success hide top-right animated fadeInRight" data-autohide="false">
+        <div class="toast-header">
+            <span class="fa fa-check-circle text-navy"></span>
+            <strong class="mr-auto m-l-sm">Selesai!</strong>
+            <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+        </div>
+    </div>
+    <div class="toast toast-bootstrap failed hide top-right animated fadeInRight" data-autohide="false">
+        <div class="toast-header">
+            <span class="fa fa-close text-danger"></span>
+            <strong class="mr-auto m-l-sm">Oops, Gagal!</strong>
+            <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            <ol style="padding-left: 15px;">
+
+            </ol>
+        </div>
+    </div>
     <!-- Mainly scripts -->
     <script src="{{ asset('inspinia/assets/js/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ asset('inspinia/assets/js/popper.min.js') }}"></script>
