@@ -70,9 +70,6 @@
             </button>
         </div>
         <div class="toast-body">
-            <ol>
-
-            </ol>
         </div>
     </div>
     <div class="toast toast-bootstrap failed hide top-right animated fadeInRight" data-autohide="false">
@@ -84,7 +81,7 @@
             </button>
         </div>
         <div class="toast-body">
-            <ol>
+            <ol style="padding-left: 15px;">
 
             </ol>
         </div>
