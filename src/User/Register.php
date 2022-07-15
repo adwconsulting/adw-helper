@@ -42,6 +42,18 @@ class Register {
         }
     }
 
+    public function setStatus(array $data, $type = 'form_params') {
+        try {
+            $response = $this->userClient->request('PUT', 'user/status',[
+                $type => $data
+            ]);
+            return $this->responseHandler($response);
+        } catch (ClientException $e) {
+            $data = $this->errorHandler($e);
+            throw new InvalidRegisterException($data->message);
+        }
+    }
+
     protected function responseHandler($response) {
         $data = $response->getBody()->getContents();
         $result = json_decode($data);
