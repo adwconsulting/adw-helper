@@ -5,7 +5,7 @@ namespace Adw\Middleware\Api;
 use Adw\Http\Response;
 use Closure;
 use Illuminate\Http\Request;
-use Adw\Auth\Exceptions\InvalidTokenException;
+use Adw\Exceptions\InvalidTokenException;
 use App\Services\AuthService;
 
 class VerifyToken
