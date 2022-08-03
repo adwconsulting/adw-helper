@@ -5,8 +5,8 @@ namespace Adw\Middleware\Api;
 use Adw\Http\Response;
 use Closure;
 use Illuminate\Http\Request;
-use Adw\Auth\User;
 use Adw\Auth\Exceptions\InvalidTokenException;
+use App\Services\AuthService;
 
 class VerifyToken
 {
@@ -14,8 +14,8 @@ class VerifyToken
     public function handle(Request $request, Closure $next)
     {
         try {
-            $user = new User($request->bearerToken());
-            $result = $user->verifyToken();
+            $authService = new AuthService;
+            $result = $authService->verifyToken($request);            
             if ($result) {
                 return $next($request);
             } else {
