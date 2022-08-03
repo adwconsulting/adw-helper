@@ -123,7 +123,7 @@ class User {
     
     public function getTenant() {               
         try { 
-            $response = $this->userClient->request('GET', 'user/tenant');        
+            $response = $this->userClient->request('GET', 'tenant');        
             return $this->responseHandler($response);
         } catch (ClientException $e) {
             $data = $this->errorHandler($e);                 
