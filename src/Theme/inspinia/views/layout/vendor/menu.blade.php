@@ -14,7 +14,7 @@
                 <li id="data-list-uom"><a href="administration-masterdata-uom.php"><i class="fa fa-dot-circle-o"></i> Master UOM</a></li>
                 <li id="data-list-anggaran"><a href="administration-masterdata-anggaran.php"><i class="fa fa-dot-circle-o"></i> Master Anggaran</a></li>
                 <li id="data-list-download"><a href="administration-masterdata-downloadtemplate.php" class="text-truncate" title="Download Template Dokumen"><i class="fa fa-dot-circle-o"></i> Download Template Dokumen</a></li>
-                <li id="data-list-template-kontrak"><a href="{{ url('tenant/master-data/template-email') }}"><i class="fa fa-dot-circle-o"></i> Template Email</a></li>
+                <li id="data-list-template-kontrak"><a href="http://localhost:8005/master-data/template-email"><i class="fa fa-dot-circle-o"></i> Template Email</a></li>
                 <li id="data-list-template-doc"><a href="administration-masterdata-templatedokumen.php"><i class="fa fa-dot-circle-o"></i> Template Dokumen</a></li>                
                 <li id="data-list-template-kontrak"><a href="administration-masterdata-templatekontrak.php"><i class="fa fa-dot-circle-o"></i> Template Surat Kontrak</a></li>
                 <li id="data-list-template-rekanan"><a href="administration-masterdata-templaterekanan.php"><i class="fa fa-dot-circle-o"></i> Template Rekanan</a></li>
@@ -95,7 +95,7 @@
             <a href=""><i class="fa fa-tasks"></i> Data Komoditi <span class="fa arrow"></span></a>
             <ul class="nav nav-third-level collapse">
                 <li id="data-list-komoditibarang"><a href="commodity-datakomoditi-komoditibarang.php"><i class="fa fa-dot-circle-o"></i> Komoditi Barang</a></li>
-                <li id="data-list-grup"><a href="{{ url('commodity/group') }}"><i class="fa fa-dot-circle-o"></i> Grup</a></li>
+                <li id="data-list-grup"><a href="http://localhost:8004/commodity/group"><i class="fa fa-dot-circle-o"></i> Grup</a></li>
                 <li id="data-list-komoditijasa"><a href="commodity-datakomoditi-komoditijasa.php"><i class="fa fa-dot-circle-o"></i> Komoditi Jasa</a></li>
                 <li id="data-list-subkategorikatalog"><a href="commodity-datakomoditi-subkategorikatalog.php"><i class="fa fa-dot-circle-o"></i> Sub Kategori Katalog</a></li>
             </ul>
@@ -133,7 +133,7 @@
         <li id="menu-daftarvendor">
             <a href=""><i class="fa fa-list-ul"></i> Daftar Vendor <span class="fa arrow"></span></a>
             <ul class="nav nav-third-level collapse">
-                <li id="data-list-allvendor"><a href="{{ url('vendor/list') }}" class="text-truncate" title="Daftar Seluruh Vendor"><i class="fa fa-dot-circle-o"></i> Daftar Seluruh Vendor</a></li>
+                <li id="data-list-allvendor"><a href="http://localhost:8003/vendor/list" class="text-truncate" title="Daftar Seluruh Vendor"><i class="fa fa-dot-circle-o"></i> Daftar Seluruh Vendor</a></li>
                 <li id="data-list-bidderlist"><a href="vendor-daftarvendor-bidderlist.php"><i class="fa fa-dot-circle-o"></i> Filter Bidder List</a></li>
                 <li id="data-list-domkadaluarsa"><a href="vendor-daftarvendor-domkadaluarsa.php" class="text-truncate" title="Daftar Vendor Domisili Kadaluarsa"><i class="fa fa-dot-circle-o"></i> Daftar Vendor Domisili Kadaluarsa</a></li>
                 <li id="data-list-kepemilikan"><a href="vendor-daftarvendor-kepemilikan.php" class="text-truncate" title="Kepemilikan Perusahaan Sama"><i class="fa fa-dot-circle-o"></i> Kepemilikan Perusahaan Sama</a></li>
